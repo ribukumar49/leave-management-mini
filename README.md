@@ -112,18 +112,6 @@ curl "http://127.0.0.1:8000/employees/1/leave-balance?year=2025"
 curl "http://127.0.0.1:8000/leaves?employee_id=1"
 ```
 
-## Deployment (Render - Free Tier)
-1. Create a new Web Service pointing to this repo.
-2. **Build Command**: `pip install -r requirements.txt`
-3. **Start Command**: `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`
-4. Add a **Render PostgreSQL** later if you want to move off SQLite.
-
-### Heroku (if available)
-Add a `Procfile`:
-```
-web: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
-```
-
 ## Potential Improvements
 - Role-based access control (Employee vs HR Admin).
 - Half-day leaves and working-day calendar logic.
