@@ -1,0 +1,35 @@
+### Add Employee
+POST http://127.0.0.1:8000/employees
+Content-Type: application/json
+
+{
+  "name": "Alice",
+  "email": "alice@corp.com",
+  "department": "HR",
+  "joining_date": "2025-01-01"
+}
+
+### Apply Leave
+POST http://127.0.0.1:8000/leaves
+Content-Type: application/json
+
+{
+  "employee_id": 1,
+  "start_date": "2025-01-10",
+  "end_date": "2025-01-12",
+  "reason": "Personal"
+}
+
+### Approve
+POST http://127.0.0.1:8000/leaves/1/decision
+Content-Type: application/json
+
+{
+  "status": "APPROVED"
+}
+
+### Get Balance
+GET http://127.0.0.1:8000/employees/1/leave-balance?year=2025
+
+### List Leaves
+GET http://127.0.0.1:8000/leaves?employee_id=1
